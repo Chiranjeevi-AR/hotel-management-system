@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - Hospital Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            color: #1976d2;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .status {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .feature-list {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        
+        .feature-list h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .feature-list li::before {
+            content: "✅";
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            margin: 0.5rem;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn:hover {
+            background-color: #1565c0;
+        }
+        
+        .endpoints {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .endpoints h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .endpoints code {
+            background: #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .endpoints div {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🏥</div>
+        <h1>Hospital Management System</h1>
+        <p>A comprehensive healthcare management solution for patients, doctors, and administrators.</p>
+        
+        <div class="status">
+            <strong>✅ System Status: Operational</strong>
+        </div>
+        
+        <div class="feature-list">
+            <h3>🎯 Core Features:</h3>
+            <ul>
+                <li>Patient Registration & Management</li>
+                <li>Doctor Dashboard & Appointments</li>
+                <li>Admin Panel & User Management</li>
+                <li>Appointment Scheduling System</li>
+                <li>Prescription Management</li>
+                <li>Role-based Access Control</li>
+                <li>Secure Authentication (JWT)</li>
+                <li>RESTful API Backend</li>
+            </ul>
+        </div>
+        
+        <div class="endpoints">
+            <h3>🔗 API Endpoints:</h3>
+            <div><strong>Frontend:</strong> <code>http://localhost:3000</code> (React Development)</div>
+            <div><strong>Backend:</strong> <code>http://localhost:8082</code> (Spring Boot API)</div>
+            <div><strong>Database:</strong> <code>MySQL on port 3307</code></div>
+        </div>
+        
+        <div style="margin: 2rem 0;">
+            <a href="http://localhost:3000" class="btn">🌐 Open React Frontend</a>
+            <a href="http://localhost:8082" class="btn">🔧 Check Backend API</a>
+        </div>
+        
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+            <h3 style="color: #333; margin-bottom: 1rem;">🚀 Development Status</h3>
+            <p style="font-size: 0.9rem; color: #666;">
+                The Hospital Management System is fully operational with Spring Boot backend, 
+                React frontend, and MySQL database. All core features are implemented and ready for testing.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

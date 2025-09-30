@@ -9,7 +9,7 @@ services:
       MYSQL_USER: hmsuser
       MYSQL_PASSWORD: hmspassword
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
@@ -27,7 +27,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: hmspassword
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
-      - "8080:8080"
+      - "8082:8080"
     depends_on:
       db:
         condition: service_healthy
