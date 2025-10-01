@@ -1,26 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  Container,
-  Typography,
-  Button,
-  Box,
-  Paper,
-  AppBar,
-  Toolbar,
-  Card,
-  CardContent,
-  Grid
-} from '@mui/material';
-import {
-  LocalHospital,
-  ExitToApp,
-  Dashboard as DashboardIcon,
-  Person,
-  Schedule,
-  MedicalServices
-} from '@mui/icons-material';
 import { useAuth } from '../../contexts/AuthContext';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -46,25 +27,25 @@ const Dashboard = () => {
 
   const getDashboardCards = () => {
     const role = user?.role?.toLowerCase();
-    
+
     switch (role) {
       case 'admin':
         return [
-          { title: 'Manage Users', description: 'Add, edit, and manage system users', icon: <Person /> },
-          { title: 'View All Appointments', description: 'Monitor all hospital appointments', icon: <Schedule /> },
-          { title: 'System Reports', description: 'Generate and view system reports', icon: <DashboardIcon /> }
+          { title: 'Manage Users', description: 'Add, edit, and manage system users', icon: '👥' },
+          { title: 'View All Appointments', description: 'Monitor all hospital appointments', icon: '📅' },
+          { title: 'System Reports', description: 'Generate and view system reports', icon: '📊' }
         ];
       case 'doctor':
         return [
-          { title: 'My Appointments', description: 'View and manage your appointments', icon: <Schedule /> },
-          { title: 'Patient Records', description: 'Access patient medical records', icon: <Person /> },
-          { title: 'Prescriptions', description: 'Create and manage prescriptions', icon: <MedicalServices /> }
+          { title: 'My Appointments', description: 'View and manage your appointments', icon: '📅' },
+          { title: 'Patient Records', description: 'Access patient medical records', icon: '📋' },
+          { title: 'Prescriptions', description: 'Create and manage prescriptions', icon: '💊' }
         ];
       case 'patient':
         return [
-          { title: 'Book Appointment', description: 'Schedule new appointments', icon: <Schedule /> },
-          { title: 'My Records', description: 'View your medical records', icon: <Person /> },
-          { title: 'My Prescriptions', description: 'View your prescriptions', icon: <MedicalServices /> }
+          { title: 'Book Appointment', description: 'Schedule new appointments', icon: '📅' },
+          { title: 'My Records', description: 'View your medical records', icon: '📋' },
+          { title: 'My Prescriptions', description: 'View your prescriptions', icon: '💊' }
         ];
       default:
         return [];
@@ -72,76 +53,63 @@ const Dashboard = () => {
   };
 
   return (
-    <>
-      <AppBar position="static">
-        <Toolbar>
-          <LocalHospital sx={{ mr: 2 }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Hospital Management System - {getDashboardTitle()}
-          </Typography>
-          <Typography variant="body1" sx={{ mr: 2 }}>
-            Welcome, {user?.username}
-          </Typography>
-          <Button color="inherit" onClick={handleLogout} startIcon={<ExitToApp />}>
-            Logout
-          </Button>
-        </Toolbar>
-      </AppBar>
-
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        <Paper sx={{ p: 3, mb: 3 }}>
-          <Typography variant="h4" gutterBottom>
-            {getDashboardTitle()}
-          </Typography>
-          <Typography variant="body1" color="textSecondary">
-            Welcome to your dashboard, {user?.username}! 
-            You are logged in as {user?.role?.toLowerCase()}.
-          </Typography>
-        </Paper>
-
-        <Grid container spacing={3}>
-          {getDashboardCards().map((card, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card sx={{ height: '100%', cursor: 'pointer', '&:hover': { elevation: 4 } }}>
-                <CardContent>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <Box sx={{ color: 'primary.main', mr: 2 }}>
-                      {React.cloneElement(card.icon, { sx: { fontSize: 32 } })}
-                    </Box>
-                    <Typography variant="h6" component="h3">
-                      {card.title}
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2" color="textSecondary">
-                    {card.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-
-        <Box sx={{ mt: 4, p: 3, backgroundColor: 'grey.100', borderRadius: 2 }}>
-          <Typography variant="h6" gutterBottom>
-            Quick Actions
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-            <Button variant="outlined" onClick={() => navigate('/')}>
-              Go Home
-            </Button>
-            <Button variant="outlined" color="secondary" onClick={handleLogout}>
+    <div className="dashboard-container">
+      <header className="dashboard-header">
+        <nav className="dashboard-nav">
+          <div className="dashboard-logo">
+            <span className="dashboard-logo-icon">🏥</span>
+            <span className="dashboard-logo-text">Hospital Management System</span>
+          </div>
+          <div className="dashboard-user-section">
+            <div className="user-info">
+              <span className="user-name">{user?.username}</span>
+              <span className="user-role">{user?.role}</span>
+            </div>
+            <button className="logout-btn" onClick={handleLogout}>
               Logout
-            </Button>
-          </Box>
-        </Box>
+            </button>
+          </div>
+        </nav>
+      </header>
 
-        <Box sx={{ mt: 4, textAlign: 'center' }}>
-          <Typography variant="body2" color="textSecondary">
-            This is a basic dashboard. Full functionality will be implemented based on your role.
-          </Typography>
-        </Box>
-      </Container>
-    </>
+      <main className="dashboard-main">
+        <div className="dashboard-welcome">
+          <h1 className="dashboard-title">{getDashboardTitle()}</h1>
+          <p className="dashboard-subtitle">
+            Welcome back, {user?.username}! You are logged in as {user?.role?.toLowerCase()}.
+            Access your personalized tools and manage your hospital activities.
+          </p>
+        </div>
+
+        <div className="dashboard-cards">
+          {getDashboardCards().map((card, index) => (
+            <div className="dashboard-card" key={index}>
+              <div className="card-icon-wrapper">
+                <span className="card-icon">{card.icon}</span>
+              </div>
+              <h3 className="card-title">{card.title}</h3>
+              <p className="card-description">{card.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="quick-actions">
+          <h2 className="quick-actions-title">Quick Actions</h2>
+          <div className="quick-actions-buttons">
+            <button className="action-btn" onClick={() => navigate('/')}>
+              🏠 Go Home
+            </button>
+            <button className="action-btn secondary" onClick={handleLogout}>
+              🚪 Logout
+            </button>
+          </div>
+        </div>
+
+        <div className="dashboard-footer">
+          <p>This dashboard provides access to key hospital management features based on your role.</p>
+        </div>
+      </main>
+    </div>
   );
 };
 
