@@ -69,3 +69,22 @@ body {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
+
+/* outlined button variant */
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--neutral-300);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--neutral-100);
+  transform: translateY(-2px);
+}
+
+/* larger buttons for hero/CTA */
+.btn-large {
+  padding: 0.95rem 1.25rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+}
