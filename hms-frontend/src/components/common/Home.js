@@ -29,10 +29,10 @@ const Home = () => {
       <main className="main-content">
         {/* Hero Section */}
         <section className="hero">
-          <div className="hero-content">
+            <div className="hero-content" aria-live="polite">
             <h1 className="hero-title">Welcome to HMS</h1>
             <p className="hero-subtitle">
-              A comprehensive hospital management solution for patients, doctors, and administrators
+              A modern hospital management solution for patients, doctors, and administrators
             </p>
             <div className="hero-buttons">
               <button type="button" className="btn btn-primary btn-large" onClick={() => navigate('/login')} aria-label="Hero login">
