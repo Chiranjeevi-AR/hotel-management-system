@@ -200,3 +200,9 @@ git push -u origin main
 
 ## License
 This project is for learning/demo purposes. Update with your preferred license.
+
+## Recent front-end tweaks
+
+- Improved UI styles and added button utilities across the frontend.
+- Small accessibility and UX improvements to the login screen (placeholders, ARIA attributes, helpful subtitle).
+- Files modified: `hms-frontend/src/App.css`, `hms-frontend/src/components/auth/Auth.css`, `hms-frontend/src/components/auth/Login.js`.

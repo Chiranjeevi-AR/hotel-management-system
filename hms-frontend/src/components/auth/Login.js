@@ -57,6 +57,9 @@ const Login = () => {
         <div className="auth-header">
           <span className="auth-icon">🏥</span>
           <h1>HMS Login</h1>
+          <p className="auth-subtitle" style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '0.95rem' }}>
+            Welcome back — sign in to continue to your dashboard
+          </p>
         </div>
 
         {error && (
@@ -77,6 +80,8 @@ const Login = () => {
               required
               disabled={loading}
               autoFocus
+              aria-label="username"
+              placeholder="Enter username or email"
             />
           </div>
           
@@ -90,13 +95,16 @@ const Login = () => {
               onChange={handleChange}
               required
               disabled={loading}
+              aria-label="password"
+              placeholder="Your password"
             />
           </div>
           
-          <button 
-            type="submit" 
-            className="btn btn-primary btn-full" 
+          <button
+            type="submit"
+            className="btn btn-primary btn-full"
             disabled={loading}
+            aria-live="polite"
           >
             {loading ? 'Signing In...' : 'Sign In'}
           </button>

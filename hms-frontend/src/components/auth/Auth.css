@@ -154,6 +154,30 @@
   margin-top: 0.5rem;
 }
 
+/* button utilities used by auth components (keeps look consistent with global buttons) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition-base);
+  background: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-color: transparent;
+}
+
+.btn-primary.btn-full {
+  padding: 0.95rem 1rem;
+}
+
 .auth-links {
   text-align: center;
   padding-top: 0.5rem;
