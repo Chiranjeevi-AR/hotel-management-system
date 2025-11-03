@@ -15,10 +15,10 @@ const Home = () => {
             <span className="logo-text">Hospital Management System</span>
           </div>
           <nav className="nav-buttons">
-            <button className="btn btn-outline" onClick={() => navigate('/login')}>
+            <button type="button" className="btn btn-outline" onClick={() => navigate('/login')} aria-label="Go to login">
               Login
             </button>
-            <button className="btn btn-primary" onClick={() => navigate('/register')}>
+            <button type="button" className="btn btn-primary" onClick={() => navigate('/register')} aria-label="Go to register">
               Register
             </button>
           </nav>
@@ -35,10 +35,10 @@ const Home = () => {
               A comprehensive hospital management solution for patients, doctors, and administrators
             </p>
             <div className="hero-buttons">
-              <button className="btn btn-primary btn-large" onClick={() => navigate('/login')}>
+              <button type="button" className="btn btn-primary btn-large" onClick={() => navigate('/login')} aria-label="Hero login">
                 🔑 Login
               </button>
-              <button className="btn btn-outline btn-large" onClick={() => navigate('/register')}>
+              <button type="button" className="btn btn-outline btn-large" onClick={() => navigate('/register')} aria-label="Hero register">
                 📝 Register
               </button>
             </div>

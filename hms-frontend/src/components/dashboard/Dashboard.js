@@ -62,10 +62,10 @@ const Dashboard = () => {
           </div>
           <div className="dashboard-user-section">
             <div className="user-info">
-              <span className="user-name">{user?.username}</span>
-              <span className="user-role">{user?.role}</span>
+              <span className="user-name" aria-label="logged-in-username">{user?.username}</span>
+              <span className="user-role" aria-label="logged-in-role">{user?.role}</span>
             </div>
-            <button className="logout-btn" onClick={handleLogout}>
+            <button type="button" className="logout-btn btn" onClick={handleLogout} aria-label="Logout">
               Logout
             </button>
           </div>
@@ -96,10 +96,10 @@ const Dashboard = () => {
         <div className="quick-actions">
           <h2 className="quick-actions-title">Quick Actions</h2>
           <div className="quick-actions-buttons">
-            <button className="action-btn" onClick={() => navigate('/')}>
+            <button type="button" className="action-btn" onClick={() => navigate('/')} aria-label="Go home">
               🏠 Go Home
             </button>
-            <button className="action-btn secondary" onClick={handleLogout}>
+            <button type="button" className="action-btn secondary" onClick={handleLogout} aria-label="Quick logout">
               🚪 Logout
             </button>
           </div>
