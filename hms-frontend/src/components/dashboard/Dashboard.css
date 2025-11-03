@@ -85,6 +85,16 @@
   box-shadow: var(--shadow-md);
 }
 
+.logout-btn:focus {
+  outline: 3px solid rgba(37,99,235,0.12);
+  outline-offset: 2px;
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
 .dashboard-main {
   max-width: 1400px;
   margin: 0 auto;
