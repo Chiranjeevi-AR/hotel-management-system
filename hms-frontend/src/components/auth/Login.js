@@ -63,7 +63,7 @@ const Login = () => {
         </div>
 
         {error && (
-          <div className="alert alert-error">
+          <div id="auth-error" className="alert alert-error" role="alert">
             {error}
           </div>
         )}
@@ -82,6 +82,7 @@ const Login = () => {
               autoFocus
               aria-label="username"
               placeholder="Enter username or email"
+              aria-describedby={error ? 'auth-error' : undefined}
             />
           </div>
           
@@ -97,7 +98,13 @@ const Login = () => {
               disabled={loading}
               aria-label="password"
               placeholder="Your password"
+              aria-describedby={error ? 'auth-error' : undefined}
             />
+          </div>
+          <div style={{ textAlign: 'right', marginTop: '0.5rem' }}>
+            <Link to="/forgot-password" className="auth-link-secondary" style={{ fontSize: '0.85rem' }}>
+              Forgot password?
+            </Link>
           </div>
           
           <button
